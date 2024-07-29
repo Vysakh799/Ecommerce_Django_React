@@ -1,3 +1,4 @@
+from typing import Any
 from django.db import models
 
 # Create your models here.
@@ -6,3 +7,6 @@ class products(models.Model):
     price=models.IntegerField()
     description=models.TextField()
     image=models.FileField()
+
+    def __str__(self):
+        return self.p_name
