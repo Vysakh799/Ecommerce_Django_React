@@ -6,6 +6,10 @@ const ProductList=()=>{
 
     useEffect(()=>{
         axios.get('https://apiecommerce.pythonanywhere.com/api/product/')
-    })
+            .then(response=>setTask(response.data))
+            .catch(error => console.log(error))
+
+    },[])
+    
 
 }
