@@ -50,11 +50,23 @@ const ViewProduct=(currentproducts)=>{
     const [product,setProduct]=useState(currentproducts)
     document.getElementById("a1").style.display="none"
     return (
-        <div>
-            
-            
-            <h2>{product.currentproduct.p_name}</h2>
-            <img src={product.currentproduct.image} alt="" />
+        <div className="container">
+        <div className="row g-4">
+            <div className="col-lg-6 d-flex justify-content-center">
+            <img src={product.currentproduct.image} alt="" className="img-fluid col-lg-12 w-75 "/>
+            </div>
+            <div className="desc col-lg-6">
+                <h2>{product.currentproduct.p_name}</h2>
+                <p>{product.currentproduct.description}</p>
+                {/* console.log(product.currentProduct); */}
+                <p>₹{product.currentproduct.price}</p>
+                <div className="row">
+                <button className="btn btn-warning col-lg-10">Add to cart</button>
+                <button className="btn btn-success col-lg-10 mt-1">Buy now</button>
+                </div>
+                
+            </div>
+        </div>
         </div>
     )
 }
